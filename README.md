@@ -1,12 +1,11 @@
 # PW-Recruiter
 Recruitment bot for Politics and War. Requires python and the requests package.
 
-Calls the nations API and pulls the smallest 500 nations that aren't in an alliance and are less than two days inactive. This approxomates to new nations, as the API does not return nation age. It then filters out any nation ID's that have already been messaged, and sends them your recruitment message, logging recipients to the logs database. It will print status messages to the terminal so you can follow what it's doing. 
+PW-Recruiter sends your recruitment message to all non-aligned nations who have not already been messaged. Recipients have their nation_id added to the logs.db file to filter them out on subisquent runs of the program. By defualt the program will loop every 5 minutes. Leave it open and running in the background if you want to keep it going at all times .
 
-You must edit message_info.py with a text editor. Include your details in the appropriate places between the quotation marks (API key, user credentials, subject, body). Subject cannot be more than 50 characters per PW rules. [[ruler]] and [[nation]] can be used as standins for a players ruler and nation name, which will be swapped in when sending the message. 
+You must edit message_info.py with a text editor. Include your details in the appropriate places between the quotation marks (API key, user credentials, subject, body). Subject cannot be more than 50 characters or PW won't send the message. [[ruler]] and [[nation]] can be used as standins in the subject or body. The script will replace that with the recipients ruler name or nation name respectively. 
 
-Windows Usage: run message.bat to launch the script. 
+Windows Usage: run the message.bat file to launch the script. 
 
-Linux: python recruit.py 
+Linux command: python recruit.py 
 
-I recommend using Cron/Task Scheduler to have it run daily.
