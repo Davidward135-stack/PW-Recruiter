@@ -26,7 +26,7 @@ For both the applicant and recruitment message, the subject and body can be pers
 
 1. Windows users will need to install Python. 
 2. Install the requests package for python.
-3. Move the logs.db file from the sqlite folder up to the main script folder. 
+3. Move the logs.db file from the sqlite folder up to the main script folder. (It is kept seperate here to prevent your database from being overwritten when pulling updates).
 
 That's it!
 
