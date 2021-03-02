@@ -1,7 +1,8 @@
-from message_info import applicant_message as message, login_payload, alliance_id
+from parameters import applicant_message as message, login_payload, alliance_id
 import requests
 import sqlite3
 from utils import send
+
 
 def get_applicants(key):
     req = requests.get(f'https://politicsandwar.com/api/nations/?key={key}&alliance_id={alliance_id}')

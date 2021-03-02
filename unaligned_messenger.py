@@ -1,7 +1,7 @@
 import sqlite3
 from utils import send
 import requests
-from message_info import recruitment_message as message, login_payload
+from parameters import recruitment_message as message, login_payload, exclude_inactive, inactivity_threshold
 
 
 def recruit(key):
@@ -43,6 +43,9 @@ def filter_unaligned(nations, conn):
     for nation in nations:
         if nation['vacmode']:
             continue
+        if exclude_inactive:
+            if nation['minutesinactive'] > inactivity_threshold:
+                continue
         nation_id = nation['nationid']
         c.execute('''SELECT nation_id FROM recruitment WHERE nation_id=?''', (nation_id,))
         result = c.fetchone()
