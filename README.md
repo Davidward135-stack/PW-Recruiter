@@ -3,7 +3,7 @@
 
 - You must configure the settings in parameters.py before running the script. 
 
-- CLI usage: python recruiter.py
+- CLI usage (run from the script folder): python recruiter.py
 - Windows users can optionally run the message.bat file instead of the command line.
 
 # Recruitment Function 
