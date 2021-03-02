@@ -22,5 +22,13 @@ Users can optionally have the script send a seperate message to all applicants o
 For both the applicant and recruitment message, the subject and body can be personalized. Use [[ruler]] and [[nation]] as standins for the recipients ruler name and nation name, respectively. The script will automatically swap them out with the recipients details before sending the message. 
 
 
+# Installation 
+
+Windows users will need to install Python. 
+Install the requests package for python.
+Move the logs.db file from the sqlite folder up to the main script folder. 
+
+That's it!
+
 
 
