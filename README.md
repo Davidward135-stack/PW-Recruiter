@@ -1,11 +1,26 @@
 # PW-Recruiter
-Recruitment bot for Politics and War. Requires python and the requests package.
+Recruitment bot for Politics and War. Requires python and the requests package. 
 
-PW-Recruiter sends your recruitment message to all non-aligned nations who have not already been messaged. Recipients have their nation_id added to the logs.db file to filter them out on subisquent runs of the program. By defualt the program will loop every 5 minutes. Leave it open and running in the background if you want to keep it going at all times .
+You must configure the settings in parameters.py before running the script. 
 
-You must edit message_info.py with a text editor. Include your details in the appropriate places between the quotation marks (API key, user credentials, subject, body). Subject cannot be more than 50 characters or PW won't send the message. [[ruler]] and [[nation]] can be used as standins in the subject or body. The script will replace that with the recipients ruler name or nation name respectively. 
+CLI usage: python recruiter.py
+Windows users can optionally run the message.bat file instead of the command line.
 
-Windows Usage: run the message.bat file to launch the script. 
+# Recruitment Function 
 
-Linux command: python recruit.py 
+PW-Recruiter sends your recruitment message to all non-aligned nations who have not already been messaged. Recipients have their nation_id added to the logs.db file to filter them out on subisquent runs of the program. By defualt the program will loop every 3 minutes. Leave it open and running in the background if you want to keep it going at all times. 
+
+Users can optionally exclude nations who have exceeded a set inactivity threshold. By default this is left off and all non-aligned non-vm nations will be messaged. This will also lead to a large volume of messages on the first run as it goes through all inactive nations in the game. Subsiquent runs will be much smaller and faster. 
+
+# Applicant Messenger
+
+Users can optionally have the script send a seperate message to all applicants of their alliance. This can be useful if you have lots of applicants who joined in-game but did not follow the rest of your procedure, such as joining a Discord or forum. This feature is off by default and must be enabled in the parameters.py
+
+
+# Message Personalization 
+
+For both the applicant and recruitment message, the subject and body can be personalized. User [[ruler]] and [[nation]] as standins for the recipients ruler name and nation name, respectively. The script will automatically swap them out with the recipients details before sending the message. 
+You must edit parameters.py with a text editor to configure the scripts settings. 
+
+
 
