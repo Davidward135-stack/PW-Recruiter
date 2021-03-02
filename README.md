@@ -1,10 +1,15 @@
 # PW-Recruiter
 - Recruitment bot for Politics and War. Requires python and the requests package. 
-
-- You must configure the settings in parameters.py before running the script. 
-
 - CLI usage (run from the script folder): python recruiter.py
 - Windows users can optionally run the message.bat file instead of the command line.
+
+# Installation 
+
+- Windows users should install the latest Python 3 if they don't have it (Mac and Linux come with it).
+- Install the requests package for python (python -m pip install requests)
+- Move the logs.db file from the sqlite folder up to the main script folder. (It is kept seperate here to prevent your database from being overwritten when pulling updates).
+- Configure the script settings by editing parameters.py and following the instructions in the file. 
+
 
 # Recruitment Function 
 
@@ -22,13 +27,6 @@ Users can optionally have the script send a seperate message to all applicants o
 For both the applicant and recruitment message, the subject and body can be personalized. Use [[ruler]] and [[nation]] as standins for the recipients ruler name and nation name, respectively. The script will automatically swap them out with the recipients details before sending the message. 
 
 
-# Installation 
-
-1. Windows users will need to install Python. 
-2. Install the requests package for python.
-3. Move the logs.db file from the sqlite folder up to the main script folder. (It is kept seperate here to prevent your database from being overwritten when pulling updates).
-
-That's it!
 
 
 
