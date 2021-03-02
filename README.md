@@ -19,8 +19,8 @@ Users can optionally have the script send a seperate message to all applicants o
 
 # Message Personalization 
 
-For both the applicant and recruitment message, the subject and body can be personalized. User [[ruler]] and [[nation]] as standins for the recipients ruler name and nation name, respectively. The script will automatically swap them out with the recipients details before sending the message. 
-You must edit parameters.py with a text editor to configure the scripts settings. 
+For both the applicant and recruitment message, the subject and body can be personalized. Use [[ruler]] and [[nation]] as standins for the recipients ruler name and nation name, respectively. The script will automatically swap them out with the recipients details before sending the message. 
+
 
 
 
