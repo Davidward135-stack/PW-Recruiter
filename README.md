@@ -1,10 +1,10 @@
 # PW-Recruiter
-*Recruitment bot for Politics and War. Requires python and the requests package. 
+- Recruitment bot for Politics and War. Requires python and the requests package. 
 
-*You must configure the settings in parameters.py before running the script. 
+- You must configure the settings in parameters.py before running the script. 
 
-*CLI usage: python recruiter.py
-*Windows users can optionally run the message.bat file instead of the command line.
+- CLI usage: python recruiter.py
+- Windows users can optionally run the message.bat file instead of the command line.
 
 # Recruitment Function 
 
