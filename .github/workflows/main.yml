@@ -1,0 +1,58 @@
+name: NOVA Recruiter
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nova-recruiter
+  cancel-in-progress: false
+
+jobs:
+  recruit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Create records if missing
+        run: |
+          if [ ! -f contacted.json ]; then
+            echo "[]" > contacted.json
+          fi
+
+      - name: Run NOVA recruiter
+        env:
+          PNW_API_KEY: ${{ secrets.PNW_API_KEY }}
+          PNW_LEGACY_KEY: ${{ secrets.PNW_LEGACY_KEY }}
+        run: python recruiter.py
+
+      - name: Save recruiter records
+        if: always()
+        run: |
+          git config user.name "NOVA Recruiter"
+          git config user.email "actions@github.com"
+          git add contacted.json
+          if [ -f new_nation_cutoff.json ]; then
+            git add new_nation_cutoff.json
+          fi
+          git diff --cached --quiet || git commit -m "Update recruitment records"
+          git pull --rebase origin master
+          git push origin master
